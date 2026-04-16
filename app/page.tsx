@@ -76,7 +76,7 @@ export default function HomePage() {
       >
         <div className="work-cell" style={{ gridRow: 'span 2' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="HCL Technologies" />
+          <img src="https://www.futureadymedia.com/images/case-studies/hcl-thumbnail-new.webp" alt="HCL Technologies" />
           <div className="work-info">
             <div className="client">HCL Technologies</div>
             <div className="title">Enterprise Demand Generation — 12 Global Markets</div>
@@ -84,7 +84,7 @@ export default function HomePage() {
         </div>
         <div className="work-cell">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80" alt="Razorpay" />
+          <img src="https://www.futureadymedia.com/images/case-studies/razorpay-thumbnail-new.webp" alt="Razorpay" />
           <div className="work-info">
             <div className="client">Razorpay</div>
             <div className="title">2.4× ROAS — Performance Campaign</div>
@@ -92,7 +92,7 @@ export default function HomePage() {
         </div>
         <div className="work-cell">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=80" alt="Rebel Foods" />
+          <img src="https://www.futureadymedia.com/images/case-studies/rebel-thumbnail-new.webp" alt="Rebel Foods" />
           <div className="work-info">
             <div className="client">Rebel Foods</div>
             <div className="title">10M+ Reach — Social-First Growth</div>
@@ -177,7 +177,7 @@ export default function HomePage() {
             <div className="img-reveal" style={{ height: '360px', overflow: 'hidden' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+                src="https://www.futureadymedia.com/images/office-new-v1.webp"
                 alt="HCL Campaign"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(30%)' }}
               />

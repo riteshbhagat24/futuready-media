@@ -153,7 +153,7 @@ export default function AboutPage() {
       <div style={{ overflow: 'hidden', height: '480px' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
+          src="https://www.futureadymedia.com/images/office-new-v1.webp"
           alt="Futuready Media Team"
           style={{
             width: '100%',

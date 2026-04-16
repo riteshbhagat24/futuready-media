@@ -43,6 +43,12 @@ export default function BlogPostPage({ params }: Props) {
         <p className="t-base sr sr-delay-3" style={{ marginTop: '2rem', maxWidth: 600 }}>{post.excerpt}</p>
       </div>
 
+      {/* FEATURED IMAGE */}
+      <div className="sr" style={{ width: '100%', height: 420, overflow: 'hidden' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(.85)' }} />
+      </div>
+
       {/* ARTICLE BODY */}
       <div style={{ padding: '5rem 4vw 8rem', maxWidth: 800 }}>
         <article style={{ fontSize: '1.05rem', lineHeight: 1.8 }}>

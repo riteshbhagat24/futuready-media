@@ -11,7 +11,7 @@ export default function HCLCaseStudy() {
     <>
       {/* HERO */}
       <div className="relative flex flex-col justify-end overflow-hidden" style={{ background: '#060e1e', minHeight: '90vh', padding: '14rem 4vw 0' }}>
-        <div className="absolute inset-0" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: .12, filter: 'grayscale(1)' }} />
+        <div className="absolute inset-0" style={{ backgroundImage: 'url(https://www.futureadymedia.com/images/case-studies/hcl-thumbnail-new.webp)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: .12, filter: 'grayscale(1)' }} />
         <div className="relative z-10">
           <div className="flex gap-4 items-center" style={{ marginBottom: '2rem' }}>
             <Link href="/work" style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '.2em', textTransform: 'uppercase', border: '1px solid rgba(255,255,255,.15)', color: 'rgba(255,255,255,.5)', padding: '.35rem .8rem' }}>← All Work</Link>

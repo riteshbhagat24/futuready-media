@@ -30,7 +30,7 @@ export default function BlogPage() {
       {/* FEATURED IMAGE */}
       <div className="sr" style={{ width: '100%', height: 480, overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1800&q=80" alt="Performance Marketing Data" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(.8)' }} />
+        <img src="https://www.futureadymedia.com/images/Ideas/blog-12-thumbnail.webp" alt="Performance Marketing Data" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(.8)' }} />
       </div>
 
       {/* ARTICLE */}

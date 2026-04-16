@@ -54,14 +54,14 @@ export default function Navbar() {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: scrolled ? '1rem 4vw' : '1.8rem 4vw',
-        background: scrolled
-          ? isDark ? 'rgba(10,10,10,.95)' : 'rgba(240,237,232,.95)'
-          : 'transparent',
-        backdropFilter: scrolled ? 'blur(14px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
-        borderBottom: scrolled
-          ? isDark ? '1px solid rgba(255,255,255,.08)' : '1px solid rgba(10,10,10,.1)'
-          : '1px solid transparent',
+        background: isDark
+          ? 'rgba(18,18,24,.92)'
+          : scrolled ? 'rgba(240,237,232,.95)' : 'rgba(240,237,232,.5)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: isDark
+          ? '1px solid rgba(255,255,255,.06)'
+          : scrolled ? '1px solid rgba(10,10,10,.1)' : '1px solid transparent',
         transition: 'padding .4s cubic-bezier(.16,1,.3,1), background .4s, border-color .4s',
       }}
     >

@@ -117,16 +117,27 @@ export default function Navbar() {
                   </svg>
                 </button>
 
-                {/* Dropdown */}
+                {/* Invisible bridge to prevent hover gap */}
                 <div
                   style={{
                     position: 'absolute',
                     top: '100%',
+                    left: '-2rem',
+                    right: '-2rem',
+                    height: '1rem',
+                  }}
+                />
+
+                {/* Dropdown */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 'calc(100% + 0.75rem)',
                     left: '50%',
-                    transform: `translateX(-50%) translateY(${dropdownOpen ? '0.75rem' : '0.5rem'})`,
+                    transform: `translateX(-50%) translateY(${dropdownOpen ? '0' : '-0.25rem'})`,
                     opacity: dropdownOpen ? 1 : 0,
                     pointerEvents: dropdownOpen ? 'auto' : 'none',
-                    transition: 'opacity .25s, transform .25s var(--ease)',
+                    transition: 'opacity .25s, transform .25s cubic-bezier(.16,1,.3,1)',
                     width: '280px',
                     background: isDark ? 'rgba(10,10,10,.95)' : 'rgba(240,237,232,.98)',
                     backdropFilter: 'blur(16px)',

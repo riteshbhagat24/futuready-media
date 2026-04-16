@@ -34,9 +34,9 @@ const values = [
 
 const team = [
   { initials: 'RB', name: 'Ritesh Bhagat', role: 'Digital Operations Head' },
-  { initials: 'SA', name: 'Strategy Lead', role: 'Brand & Growth Strategy' },
-  { initials: 'PM', name: 'Performance Lead', role: 'Google & Meta Ads' },
-  { initials: 'SE', name: 'SEO Head', role: 'SEO, AEO & GEO' },
+  { initials: 'SA', name: 'Karthik PS', role: 'Brand & Growth Strategy' },
+  { initials: 'PM', name: 'Parth Mehta', role: 'Business Lead' },
+  { initials: 'SE', name: 'Zeeshan Thakur', role: 'Client Success Lead' },
 ];
 
 const clients = [

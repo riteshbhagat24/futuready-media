@@ -46,20 +46,18 @@ export default function Navbar() {
       } ${scrolled ? 'scrolled' : ''}`}
       style={{
         padding: scrolled ? '1.2rem 4vw' : '2rem 4vw',
-        background: scrolled
-          ? isDark
-            ? 'rgba(10,10,10,.92)'
-            : 'rgba(240,237,232,.92)'
-          : isDark
-            ? 'linear-gradient(to bottom, rgba(10,10,10,.7) 0%, transparent 100%)'
+        background: isDark
+          ? 'rgba(10,10,10,.85)'
+          : scrolled
+            ? 'rgba(240,237,232,.92)'
             : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled
-          ? isDark
-            ? '1px solid rgba(255,255,255,.08)'
-            : '1px solid var(--rule)'
-          : '1px solid transparent',
+        backdropFilter: isDark || scrolled ? 'blur(12px)' : 'none',
+        WebkitBackdropFilter: isDark || scrolled ? 'blur(12px)' : 'none',
+        borderBottom: isDark
+          ? '1px solid rgba(255,255,255,.06)'
+          : scrolled
+            ? '1px solid var(--rule)'
+            : '1px solid transparent',
       }}
     >
       <Link href="/" className="nav-logo h-8 flex items-center">

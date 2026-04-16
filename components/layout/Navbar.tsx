@@ -15,12 +15,12 @@ const serviceLinks = [
   { label: 'Enterprise Demand Generation', href: '/services/demand-generation' },
 ];
 
-const links = [
+const links: { label: string; href: string; hasDropdown?: boolean }[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
   { label: 'Services', href: '/services', hasDropdown: true },
-  { label: 'Ideas', href: '/blog' },
+  { label: 'Ideas', href: '/ideas' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -30,8 +30,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isDark = ['/', '/work', '/contact'].some(
-    (p) => pathname === p || pathname.startsWith('/case-study')
-  );
+    (p) => pathname === p
+  ) || pathname.startsWith('/case-study');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -39,112 +39,93 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const linkColor = isDark ? '#ffffff' : '#0a0a0a';
+  const linkDimColor = isDark ? 'rgba(255,255,255,.65)' : 'rgba(10,10,10,.55)';
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between transition-all duration-400 ${
-        isDark ? 'dark' : ''
-      } ${scrolled ? 'scrolled' : ''}`}
       style={{
-        padding: scrolled ? '1.2rem 4vw' : '2rem 4vw',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: scrolled ? '1rem 4vw' : '1.8rem 4vw',
         background: isDark
-          ? 'rgba(10,10,10,.85)'
-          : scrolled
-            ? 'rgba(240,237,232,.92)'
-            : 'transparent',
-        backdropFilter: isDark || scrolled ? 'blur(12px)' : 'none',
-        WebkitBackdropFilter: isDark || scrolled ? 'blur(12px)' : 'none',
-        borderBottom: isDark
-          ? '1px solid rgba(255,255,255,.06)'
-          : scrolled
-            ? '1px solid var(--rule)'
-            : '1px solid transparent',
+          ? scrolled ? 'rgba(10,10,10,.95)' : 'rgba(10,10,10,.6)'
+          : scrolled ? 'rgba(240,237,232,.95)' : 'rgba(240,237,232,.4)',
+        backdropFilter: 'blur(14px)',
+        WebkitBackdropFilter: 'blur(14px)',
+        borderBottom: scrolled
+          ? isDark ? '1px solid rgba(255,255,255,.08)' : '1px solid rgba(10,10,10,.1)'
+          : '1px solid transparent',
+        transition: 'padding .4s cubic-bezier(.16,1,.3,1), background .4s, border-color .4s',
       }}
     >
-      <Link href="/" className="nav-logo h-8 flex items-center">
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', height: 32 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://www.futureadymedia.com/images/main-logo-white.png"
           alt="Futuready Media"
-          className="h-7 w-auto object-contain"
-          style={{ filter: isDark ? 'none' : 'brightness(0)' }}
+          style={{ height: 24, width: 'auto', objectFit: 'contain', filter: isDark ? 'none' : 'brightness(0)' }}
         />
       </Link>
 
-      <div className="hidden md:flex items-center gap-10">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden md:flex">
         {links.map((link) => {
-          const isActive =
-            link.href === '/'
-              ? pathname === '/'
-              : pathname === link.href || pathname.startsWith(link.href + '/');
+          const isActive = link.href === '/'
+            ? pathname === '/'
+            : pathname === link.href || pathname.startsWith(link.href + '/');
 
           if (link.hasDropdown) {
             return (
               <div
                 key={link.label}
-                className="relative"
+                style={{ position: 'relative' }}
                 onMouseEnter={() => setDropdownOpen(true)}
                 onMouseLeave={() => setDropdownOpen(false)}
               >
                 <button
-                  className="relative text-[13px] tracking-[.04em] transition-opacity flex items-center gap-1"
                   style={{
-                    opacity: isActive ? 1 : 0.7,
+                    fontSize: '13px',
                     fontWeight: isActive ? 700 : 500,
-                    color: isDark ? 'var(--white)' : 'var(--ink)',
+                    letterSpacing: '.04em',
+                    color: isActive ? linkColor : linkDimColor,
                     background: 'none',
                     border: 'none',
                     fontFamily: "'Poppins', sans-serif",
                     cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    transition: 'color .2s',
+                    padding: 0,
                   }}
                 >
                   {link.label}
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    style={{
-                      transition: 'transform .3s var(--ease)',
-                      transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0)',
-                    }}
-                  >
-                    <path
-                      d="M1 1L5 5L9 1"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    style={{ transition: 'transform .3s', transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0)' }}>
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
 
-                {/* Invisible bridge to prevent hover gap */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '100%',
-                    left: '-2rem',
-                    right: '-2rem',
-                    height: '1rem',
-                  }}
-                />
-
-                {/* Dropdown */}
+                {/* Bridge + Dropdown */}
+                <div style={{ position: 'absolute', top: '100%', left: '-2rem', right: '-2rem', height: '1rem' }} />
                 <div
                   style={{
                     position: 'absolute',
                     top: 'calc(100% + 0.75rem)',
                     left: '50%',
-                    transform: `translateX(-50%) translateY(${dropdownOpen ? '0' : '-0.25rem'})`,
+                    transform: `translateX(-50%) translateY(${dropdownOpen ? '0' : '-4px'})`,
                     opacity: dropdownOpen ? 1 : 0,
                     pointerEvents: dropdownOpen ? 'auto' : 'none',
-                    transition: 'opacity .25s, transform .25s cubic-bezier(.16,1,.3,1)',
+                    transition: 'opacity .2s, transform .2s',
                     width: '280px',
-                    background: isDark ? 'rgba(10,10,10,.95)' : 'rgba(240,237,232,.98)',
-                    backdropFilter: 'blur(16px)',
-                    border: isDark
-                      ? '1px solid rgba(255,255,255,.08)'
-                      : '1px solid var(--rule)',
+                    background: isDark ? '#111111' : '#eae7e2',
+                    border: isDark ? '1px solid rgba(255,255,255,.1)' : '1px solid rgba(10,10,10,.1)',
                     padding: '.5rem 0',
                   }}
                 >
@@ -156,29 +137,26 @@ export default function Navbar() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '.7rem 1.5rem',
+                        padding: '.65rem 1.5rem',
                         fontSize: '12px',
                         fontWeight: 500,
-                        color: isDark ? 'rgba(255,255,255,.6)' : 'var(--warm)',
-                        borderBottom:
-                          i < serviceLinks.length - 1
-                            ? isDark
-                              ? '1px solid rgba(255,255,255,.04)'
-                              : '1px solid var(--rule)'
-                            : 'none',
-                        transition: 'color .2s, padding-left .3s var(--ease)',
+                        color: isDark ? 'rgba(255,255,255,.55)' : 'rgba(10,10,10,.5)',
+                        borderBottom: i < serviceLinks.length - 1
+                          ? isDark ? '1px solid rgba(255,255,255,.05)' : '1px solid rgba(10,10,10,.06)'
+                          : 'none',
+                        transition: 'color .15s, padding-left .25s',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = isDark ? 'var(--white)' : 'var(--ink)';
+                        e.currentTarget.style.color = isDark ? '#ffffff' : '#0a0a0a';
                         e.currentTarget.style.paddingLeft = '1.8rem';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.color = isDark ? 'rgba(255,255,255,.6)' : 'var(--warm)';
+                        e.currentTarget.style.color = isDark ? 'rgba(255,255,255,.55)' : 'rgba(10,10,10,.5)';
                         e.currentTarget.style.paddingLeft = '1.5rem';
                       }}
                     >
                       {svc.label}
-                      <span style={{ fontSize: '10px', color: 'var(--blue)' }}>→</span>
+                      <span style={{ fontSize: '10px', color: '#0053CD' }}>→</span>
                     </Link>
                   ))}
                 </div>
@@ -190,11 +168,12 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="relative text-[13px] font-medium tracking-[.04em] transition-opacity"
               style={{
-                opacity: isActive ? 1 : 0.7,
+                fontSize: '13px',
                 fontWeight: isActive ? 700 : 500,
-                color: isDark ? 'var(--white)' : 'var(--ink)',
+                letterSpacing: '.04em',
+                color: isActive ? linkColor : linkDimColor,
+                transition: 'color .2s',
               }}
             >
               {link.label}
@@ -205,12 +184,16 @@ export default function Navbar() {
 
       <Link
         href="/contact"
-        className="btn text-xs"
         style={{
-          padding: '.65rem 1.4rem',
-          border: isDark ? '1.5px solid rgba(255,255,255,.3)' : '1.5px solid var(--ink)',
-          color: isDark ? 'var(--white)' : 'var(--ink)',
+          fontSize: '11px',
+          fontWeight: 600,
+          letterSpacing: '.08em',
+          textTransform: 'uppercase',
+          padding: '.6rem 1.3rem',
+          border: isDark ? '1.5px solid rgba(255,255,255,.4)' : '1.5px solid #0a0a0a',
+          color: isDark ? '#ffffff' : '#0a0a0a',
           background: 'transparent',
+          transition: 'background .2s, color .2s',
         }}
       >
         Let&apos;s Talk

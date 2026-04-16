@@ -10,14 +10,14 @@ const clients = [
 const clientsDouble = [...clients, ...clients];
 
 const services = [
-  { num: '01', name: 'Performance Marketing' },
-  { num: '02', name: 'SEO, AEO & GEO' },
-  { num: '03', name: 'Brand Strategy' },
-  { num: '04', name: 'Web Design & Development' },
-  { num: '05', name: 'AI Integration & Automation' },
-  { num: '06', name: 'Social Media Management' },
-  { num: '07', name: 'Content Marketing' },
-  { num: '08', name: 'Enterprise Demand Generation' },
+  { num: '01', name: 'Performance Marketing', href: '/services/performance-marketing' },
+  { num: '02', name: 'SEO, AEO & GEO', href: '/services/seo-aeo-geo' },
+  { num: '03', name: 'Brand Strategy', href: '/services/brand-strategy' },
+  { num: '04', name: 'Web Design & Development', href: '/services/web-development' },
+  { num: '05', name: 'AI Integration & Automation', href: '/services/ai-integration' },
+  { num: '06', name: 'Social Media Management', href: '/services/social-media' },
+  { num: '07', name: 'Content Marketing', href: '/services/content-marketing' },
+  { num: '08', name: 'Enterprise Demand Generation', href: '/services/demand-generation' },
 ];
 
 const bigMarqueeItems = [
@@ -104,20 +104,20 @@ export default function HomePage() {
       <div style={{ background: 'var(--white)' }}>
         <div className="stats-row" style={{ borderTop: 'none', padding: '0 4vw', maxWidth: '100%' }}>
           <div className="stat-item sr">
-            <div className="stat-num"><span data-count="4">0</span><span className="unit">×</span></div>
-            <div className="stat-desc">Average ROAS across performance campaigns</div>
+            <div className="stat-num"><span data-count="500">0</span><span className="unit">+</span></div>
+            <div className="stat-desc">Happy clients across India and globally</div>
           </div>
           <div className="stat-item sr sr-delay-1">
-            <div className="stat-num"><span data-count="150">0</span><span className="unit">+</span></div>
-            <div className="stat-desc">Brands scaled across India and globally</div>
+            <div className="stat-num"><span data-count="13">0</span><span className="unit">+</span></div>
+            <div className="stat-desc">Years of creative digital experience</div>
           </div>
           <div className="stat-item sr sr-delay-2">
-            <div className="stat-num"><span data-count="12">0</span></div>
-            <div className="stat-desc">Years of performance-first marketing</div>
+            <div className="stat-num"><span data-count="750">0</span><span className="unit">+</span></div>
+            <div className="stat-desc">Projects delivered across industries</div>
           </div>
           <div className="stat-item sr sr-delay-3">
-            <div className="stat-num"><span data-count="92">0</span><span className="unit">%</span></div>
-            <div className="stat-desc">Client retention year over year</div>
+            <div className="stat-num"><span data-count="70">0</span><span className="unit">+</span></div>
+            <div className="stat-desc">In-house experts across disciplines</div>
           </div>
         </div>
       </div>
@@ -144,7 +144,7 @@ export default function HomePage() {
         <h2 className="d-md sr" style={{ marginBottom: '3.5rem' }}>Eight disciplines.<br />One obsession.</h2>
         <div className="services-list">
           {services.map((svc) => (
-            <Link key={svc.num} href="/services/performance-marketing">
+            <Link key={svc.num} href={svc.href}>
               <div className="svc-item">
                 <span className="svc-num">{svc.num}</span>
                 <span className="svc-name">{svc.name}</span>

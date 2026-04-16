@@ -2,41 +2,41 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About Us — Full Service Creative Digital Agency',
   description:
-    'Futuready Media is a 12-year-old performance-first digital marketing agency in Mumbai. 150+ brands, 35-strong team, 92% client retention.',
+    'Futuready Media is a full-service creative digital agency focused on Strategy, Branding, Content, Design, Marketing and Technology. 13+ years, 500+ clients, offices in Mumbai, Bangalore & UAE.',
   alternates: { canonical: 'https://futureadymedia.com/about' },
 };
 
 const stats = [
-  { count: 12, unit: '', label: 'Years in Business' },
-  { count: 150, unit: '+', label: 'Brands Scaled' },
-  { count: 35, unit: '', label: 'Team Members' },
-  { count: 92, unit: '%', label: 'Client Retention' },
+  { count: 13, unit: '+', label: 'Years of Experience' },
+  { count: 500, unit: '+', label: 'Happy Clients' },
+  { count: 750, unit: '+', label: 'Projects Delivered' },
+  { count: 70, unit: '+', label: 'In-house Experts' },
 ];
 
 const milestones = [
-  { year: '2012', text: 'Founded in Mumbai with a 3-person team focused on search marketing.' },
-  { year: '2015', text: 'Crossed 50 active clients. Launched performance marketing vertical.' },
-  { year: '2018', text: 'Expanded to enterprise B2B. Signed HCL Technologies as anchor client.' },
-  { year: '2021', text: 'Built in-house AI and automation practice. Grew to 30+ team members.' },
-  { year: '2024', text: '150+ brands served. Launched AEO and GEO capabilities ahead of market.' },
+  { year: '2012', text: 'Founded in Mumbai as a creative digital consultancy with a vision to create business value through efficient communication solutions.' },
+  { year: '2015', text: 'Expanded service offerings to include branding, content, and design. Crossed 100 active clients across multiple industries.' },
+  { year: '2018', text: 'Full-stack expansion — added web development, social media management, and enterprise digital marketing verticals.' },
+  { year: '2021', text: 'Opened Bangalore office. Launched AI integration and marketing automation as formal service lines.' },
+  { year: '2024', text: '500+ clients served. UAE office opened. Launched GEO and AEO capabilities for next-gen search visibility.' },
 ];
 
 const values = [
-  { title: 'Accountability Over Visibility', desc: 'We measure ourselves by outcomes, not impressions.' },
-  { title: 'Strategy Before Execution', desc: 'Every campaign starts with a hypothesis, not a template.' },
-  { title: 'Speed + Precision', desc: 'We move fast without cutting corners on quality.' },
-  { title: 'Brutal Honesty', desc: 'We tell clients what they need to hear, not what they want to hear.' },
-  { title: 'AI-First Thinking', desc: 'Automation and intelligence are embedded in everything we ship.' },
-  { title: 'Long-Term Partnerships', desc: '92% retention because we treat client growth as our growth.' },
+  { title: 'Small Teams, Big Results', desc: 'Small, interdisciplinary teams work in true collaboration with clients, helping to find new opportunities and solve existing business problems.' },
+  { title: 'Collaboration', desc: 'Our collaborative approach fosters better communication, more efficient use of project resources, and ultimately allows us to add maximum value to your business.' },
+  { title: 'True Partnership', desc: 'We take the time to understand your business inside out so we can drive real value. We become a true partner, working across brand, marketing and technology initiatives.' },
+  { title: 'Stories That Connect', desc: 'In the digital age, brands need to tell powerful stories that use technology to engage customers and drive results. We deliver brand success through data, insights, and creativity.' },
+  { title: 'AI-First Thinking', desc: 'We integrate AI into strategy, execution, and reporting — not as a buzzword, but as a genuine lever for scale, efficiency, and competitive advantage.' },
+  { title: 'Long-Term Partnerships', desc: 'We build lasting relationships based on integrity and trust. Our client retention speaks for itself — we grow when our clients grow.' },
 ];
 
 const team = [
-  { initials: 'RM', name: 'Ritesh M.', role: 'Founder & CEO' },
-  { initials: 'SA', name: 'Sneha A.', role: 'Head of Strategy' },
-  { initials: 'PM', name: 'Priya M.', role: 'Performance Lead' },
-  { initials: 'SE', name: 'Sameer E.', role: 'Tech & AI Lead' },
+  { initials: 'RB', name: 'Ritesh Bhagat', role: 'Digital Operations Head' },
+  { initials: 'SA', name: 'Strategy Lead', role: 'Brand & Growth Strategy' },
+  { initials: 'PM', name: 'Performance Lead', role: 'Google & Meta Ads' },
+  { initials: 'SE', name: 'SEO Head', role: 'SEO, AEO & GEO' },
 ];
 
 const clients = [
@@ -66,8 +66,7 @@ export default function AboutPage() {
           </span>
         </h1>
         <p className="t-base sr sr-delay-2" style={{ maxWidth: '560px' }}>
-          We are a 12-year-old, performance-first digital marketing agency in Mumbai.
-          We help ambitious brands grow through strategy, data, and relentless execution.
+          We are a full-service creative digital agency focused on Strategy, Branding, Content, Design, Marketing, and Technology. Creating business value through the most efficient and effective communication solutions since 2012.
         </p>
       </section>
 
@@ -102,17 +101,13 @@ export default function AboutPage() {
               <span className="line" />
             </div>
             <h2 className="d-md sr sr-delay-1" style={{ marginBottom: '2rem' }}>
-              From three desks<br />to 150+ brands.
+              13+ years.<br />One vision.
             </h2>
             <p className="t-base sr sr-delay-2" style={{ marginBottom: '1.5rem' }}>
-              Futuready Media started in 2012 as a small search-marketing consultancy run
-              from a co-working space in Andheri. The idea was simple: help brands grow by
-              treating every rupee of ad spend as an investment, not an expense.
+              Our passionate team works with clients to create real value. We deliver this value by providing the most efficient and effective communication solutions. We strive to build lasting relationships with our clients, employees and vendors based on integrity and trust.
             </p>
             <p className="t-base sr sr-delay-3">
-              Twelve years on, we have scaled into a 35-member, full-stack agency that serves
-              enterprise, D2C, real estate, and B2B brands across India and globally. Our
-              approach has not changed — performance first, strategy always, vanity never.
+              From our Mumbai headquarters to offices in Bangalore and the UAE, our team of 70+ in-house experts spans strategy, branding, content, design, marketing, development, and AI — serving 500+ clients across India, the Middle East, and globally.
             </p>
           </div>
 
@@ -179,7 +174,7 @@ export default function AboutPage() {
           className="d-md sr sr-delay-1"
           style={{ color: 'var(--white)', marginBottom: '3.5rem' }}
         >
-          Six principles.<br />Zero compromise.
+          Our values.<br />Our promise.
         </h2>
         <div
           className="values-grid"

@@ -48,8 +48,7 @@ export default function HomeHero() {
       {/* Bottom row */}
       <div className="flex justify-between items-end gap-12 flex-wrap">
         <p style={{ maxWidth: '420px', fontSize: '.92rem', lineHeight: 1.7, color: 'rgba(255,255,255,.45)' }}>
-          Strategy, performance marketing, SEO, AI integration —
-          everything an ambitious brand needs under one roof.
+          A full-service creative digital agency focused on Strategy, Branding, Content, Design, Marketing, Technology &amp; AI — 500+ clients, 13+ years, offices in Mumbai, Bangalore &amp; UAE.
         </p>
         <div className="flex gap-4 shrink-0">
           <Link href="/work" className="btn btn-white">See Our Work</Link>

@@ -33,7 +33,8 @@ export default function Footer() {
           <ul>
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/work">Our Work</Link></li>
-            <li><Link href="/blog">Ideas</Link></li>
+            <li><Link href="/ideas">Ideas</Link></li>
+            <li><Link href="/careers">Careers</Link></li>
             <li><Link href="/contact">Contact</Link></li>
             <li><Link href="/digital-marketing-agency-mumbai">Mumbai Office</Link></li>
           </ul>

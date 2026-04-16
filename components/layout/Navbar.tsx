@@ -54,11 +54,11 @@ export default function Navbar() {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: scrolled ? '1rem 4vw' : '1.8rem 4vw',
-        background: isDark
-          ? scrolled ? 'rgba(10,10,10,.95)' : 'rgba(10,10,10,.6)'
-          : scrolled ? 'rgba(240,237,232,.95)' : 'rgba(240,237,232,.4)',
-        backdropFilter: 'blur(14px)',
-        WebkitBackdropFilter: 'blur(14px)',
+        background: scrolled
+          ? isDark ? 'rgba(10,10,10,.95)' : 'rgba(240,237,232,.95)'
+          : 'transparent',
+        backdropFilter: scrolled ? 'blur(14px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
         borderBottom: scrolled
           ? isDark ? '1px solid rgba(255,255,255,.08)' : '1px solid rgba(10,10,10,.1)'
           : '1px solid transparent',

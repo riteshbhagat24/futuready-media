@@ -21,9 +21,9 @@ export default function IdeasPage() {
 
       {/* GRID */}
       <section style={{ padding: '5rem 4vw 7rem' }}>
-        <div className="grid gap-8 sr" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-          {blogPosts.map((post, i) => (
-            <Link key={post.slug} href={`/ideas/${post.slug}`} className={`sr ${i > 0 ? `sr-delay-${Math.min(i % 3, 3)}` : ''}`} style={{ display: 'block' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          {blogPosts.map((post) => (
+            <Link key={post.slug} href={`/ideas/${post.slug}`} style={{ display: 'block' }}>
               <div style={{ borderBottom: '1px solid var(--rule)', paddingBottom: '2rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: '200px', overflow: 'hidden', marginBottom: '1.2rem' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -14,7 +14,7 @@ export default function HomeHero() {
       }}
     >
       {/* Top row */}
-      <div className="flex justify-between items-start" style={{ paddingTop: '10rem', marginBottom: 'auto' }}>
+      <div className="flex justify-between items-start" style={{ paddingTop: '7rem', marginBottom: 'auto' }}>
         <div
           style={{
             fontSize: '11px', fontWeight: 600, letterSpacing: '.2em',
@@ -31,16 +31,16 @@ export default function HomeHero() {
 
       {/* Headline */}
       <div style={{ marginBottom: '3rem' }}>
-        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.8rem, 8vw, 9rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'var(--white)' }}>
+        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.5rem, 7vw, 7.5rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'var(--white)' }}>
           <span className="reveal-line">We Build</span>
         </span>
-        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.8rem, 8vw, 9rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'var(--blue)', fontStyle: 'italic' }}>
+        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.5rem, 7vw, 7.5rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'var(--blue)', fontStyle: 'italic' }}>
           <span className="reveal-line" style={{ transitionDelay: '.12s' }}>Brands That</span>
         </span>
-        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.8rem, 8vw, 9rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'rgba(255,255,255,.2)' }}>
+        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.5rem, 7vw, 7.5rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'rgba(255,255,255,.2)' }}>
           <span className="reveal-line" style={{ transitionDelay: '.24s' }}>Actually</span>
         </span>
-        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.8rem, 8vw, 9rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'var(--white)' }}>
+        <span className="reveal-wrap block" style={{ fontSize: 'clamp(2.5rem, 7vw, 7.5rem)', fontWeight: 900, lineHeight: '.88', letterSpacing: '-.03em', color: 'var(--white)' }}>
           <span className="reveal-line" style={{ transitionDelay: '.36s' }}>Grow.</span>
         </span>
       </div>

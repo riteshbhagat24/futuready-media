@@ -74,30 +74,30 @@ export default function HomePage() {
         className="grid gap-[3px]"
         style={{ gridTemplateColumns: '58fr 42fr', gridTemplateRows: '520px 320px', background: 'var(--ink)' }}
       >
-        <div className="work-cell" style={{ gridRow: 'span 2' }}>
+        <Link href="/work/hcl" className="work-cell" style={{ gridRow: 'span 2', display: 'block', position: 'relative', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://www.futureadymedia.com/images/case-studies/hcl-thumbnail-new.webp" alt="HCL Technologies" />
+          <img src="https://www.futureadymedia.com/images/case-studies/hcl-thumbnail-new.webp" alt="HCL Technologies" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="work-info">
             <div className="client">HCL Technologies</div>
             <div className="title">Enterprise Demand Generation — 12 Global Markets</div>
           </div>
-        </div>
-        <div className="work-cell">
+        </Link>
+        <Link href="/work/razorpay" className="work-cell" style={{ display: 'block', position: 'relative', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://www.futureadymedia.com/images/case-studies/razorpay-thumbnail-new.webp" alt="Razorpay" />
+          <img src="https://www.futureadymedia.com/images/case-studies/razorpay-thumbnail-new.webp" alt="Razorpay" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="work-info">
             <div className="client">Razorpay</div>
             <div className="title">2.4× ROAS — Performance Campaign</div>
           </div>
-        </div>
-        <div className="work-cell">
+        </Link>
+        <Link href="/work/rebel-foods" className="work-cell" style={{ display: 'block', position: 'relative', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://www.futureadymedia.com/images/case-studies/rebel-thumbnail-new.webp" alt="Rebel Foods" />
+          <img src="https://www.futureadymedia.com/images/case-studies/rebel-thumbnail-new.webp" alt="Rebel Foods" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="work-info">
             <div className="client">Rebel Foods</div>
             <div className="title">10M+ Reach — Social-First Growth</div>
           </div>
-        </div>
+        </Link>
       </div>
 
       {/* STATS */}

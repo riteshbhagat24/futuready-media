@@ -48,10 +48,13 @@ export default function Navbar() {
         padding: scrolled ? '1.2rem 4vw' : '2rem 4vw',
         background: scrolled
           ? isDark
-            ? 'rgba(10,10,10,.9)'
-            : 'rgba(240,237,232,.9)'
-          : 'transparent',
+            ? 'rgba(10,10,10,.92)'
+            : 'rgba(240,237,232,.92)'
+          : isDark
+            ? 'linear-gradient(to bottom, rgba(10,10,10,.7) 0%, transparent 100%)'
+            : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
         borderBottom: scrolled
           ? isDark
             ? '1px solid rgba(255,255,255,.08)'

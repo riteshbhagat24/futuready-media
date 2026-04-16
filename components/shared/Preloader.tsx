@@ -19,7 +19,6 @@ export default function Preloader() {
         setTimeout(() => setDone(true), 300);
         setTimeout(() => {
           setHidden(true);
-          // Trigger reveal lines
           document.querySelectorAll('.reveal-line').forEach((el, i) => {
             setTimeout(() => el.classList.add('in'), 120 * i);
           });
@@ -36,11 +35,11 @@ export default function Preloader() {
     <div
       className="fixed inset-0 flex flex-col items-start justify-end overflow-hidden"
       style={{
-        background: 'var(--ink)',
+        background: '#0a0a0a',
         zIndex: 10000,
         padding: '6vw',
         transform: done ? 'translateY(-100%)' : 'translateY(0)',
-        transition: done ? 'transform 1s 0.1s var(--ease)' : 'none',
+        transition: done ? 'transform 1s 0.1s cubic-bezier(.16,1,.3,1)' : 'none',
       }}
     >
       <div
@@ -48,11 +47,11 @@ export default function Preloader() {
         className="absolute top-0 left-0 h-[2px]"
         style={{
           width: '0%',
-          background: 'var(--blue)',
-          transition: 'width 2s var(--ease)',
+          background: '#0053CD',
+          transition: 'width 2s cubic-bezier(.16,1,.3,1)',
         }}
       />
-      <div className="label" style={{ color: 'var(--warm)', marginBottom: '1rem' }}>
+      <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '.2em', textTransform: 'uppercase', color: '#7a7772', marginBottom: '1rem' }}>
         Loading
       </div>
       <div
@@ -60,7 +59,7 @@ export default function Preloader() {
         style={{
           fontSize: 'clamp(6rem,18vw,20rem)',
           fontWeight: 900,
-          color: 'var(--white)',
+          color: '#ffffff',
           lineHeight: '.85',
           userSelect: 'none',
         }}

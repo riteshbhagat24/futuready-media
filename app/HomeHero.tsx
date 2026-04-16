@@ -5,16 +5,16 @@ import Link from 'next/link';
 export default function HomeHero() {
   return (
     <section
-      className="relative flex flex-col justify-end overflow-hidden"
+      className="relative flex flex-col justify-end overflow-hidden w-full"
       style={{
         height: '100vh',
-        minHeight: '640px',
+        minHeight: '580px',
         background: 'var(--ink)',
-        padding: '0 4vw 4rem',
+        padding: '0 5vw 3rem',
       }}
     >
       {/* Top row */}
-      <div className="flex justify-between items-start" style={{ paddingTop: '7rem', marginBottom: 'auto' }}>
+      <div className="flex justify-between items-start" style={{ paddingTop: '6rem', marginBottom: 'auto' }}>
         <div
           style={{
             fontSize: '11px', fontWeight: 600, letterSpacing: '.2em',

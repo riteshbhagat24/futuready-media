@@ -67,7 +67,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex" style={{ alignItems: 'center', gap: '2.2rem' }}>
+        <div className="hidden lg:flex" style={{ alignItems: 'center', gap: '2.2rem' }}>
           {navLinks.map((link) => {
             const isActive = link.href === '/' ? pathname === '/' : pathname === link.href || pathname.startsWith(link.href + '/');
             if (link.hasDropdown) {
@@ -113,7 +113,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <Link href="/contact" className="hidden md:inline-flex" style={{
+        <Link href="/contact" className="hidden lg:inline-flex" style={{
           fontSize: '11px', fontWeight: 600, letterSpacing: '.08em', textTransform: 'uppercase',
           padding: '.6rem 1.3rem', border: isDark ? '1.5px solid rgba(255,255,255,.4)' : '1.5px solid #0a0a0a',
           color: isDark ? '#fff' : '#0a0a0a', background: 'transparent',
@@ -121,7 +121,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
           style={{
@@ -152,7 +152,7 @@ export default function Navbar() {
       {/* Mobile menu overlay */}
       {mobileOpen && (
         <div
-          className="md:hidden"
+          className="lg:hidden"
           style={{
             position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 999,
             background: isDark ? '#0a0a0a' : '#f0ede8',

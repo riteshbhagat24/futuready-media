@@ -7,8 +7,8 @@ export default function HomeCTA() {
 
   return (
     <section
-      className="grid gap-24 items-center"
-      style={{ background: 'var(--blue)', padding: '8rem 4vw', gridTemplateColumns: '1fr 1fr' }}
+      className="grid gap-12 md:gap-24 items-center grid-cols-1 md:grid-cols-2"
+      style={{ background: 'var(--blue)', padding: '5rem 4vw' }}
     >
       <div>
         <div className="label sr" style={{ color: 'rgba(255,255,255,.4)', marginBottom: '1.5rem' }}>

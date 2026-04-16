@@ -66,10 +66,10 @@ export default function WorkPage() {
 
       {/* WORK GRID */}
       <section style={{ padding: '3rem 4vw 5rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '3px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[3px]">
           {filtered.map((w) => (
             <Link key={w.slug} href={`/work/${w.slug}`} style={{ display: 'block' }}>
-              <div className="work-cell" style={{ height: '320px', position: 'relative', overflow: 'hidden' }}>
+              <div className="work-cell" style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/3', minHeight: '240px' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={w.image}

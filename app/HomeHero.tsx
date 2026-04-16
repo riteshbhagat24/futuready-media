@@ -46,11 +46,11 @@ export default function HomeHero() {
       </div>
 
       {/* Bottom row */}
-      <div className="flex justify-between items-end gap-12 flex-wrap">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-12">
         <p style={{ maxWidth: '420px', fontSize: '.92rem', lineHeight: 1.7, color: 'rgba(255,255,255,.45)' }}>
           A full-service creative digital agency focused on Strategy, Branding, Content, Design, Marketing, Technology &amp; AI — 500+ clients, 13+ years, offices in Mumbai, Bangalore &amp; UAE.
         </p>
-        <div className="flex gap-4 shrink-0">
+        <div className="flex gap-4 shrink-0 flex-wrap">
           <Link href="/work" className="btn btn-white">See Our Work</Link>
           <Link
             href="/contact"
@@ -64,7 +64,7 @@ export default function HomeHero() {
 
       {/* Scroll hint */}
       <div
-        className="absolute flex items-center gap-4"
+        className="absolute hidden md:flex items-center gap-4"
         style={{
           right: '4vw', bottom: '4rem',
           writingMode: 'vertical-rl', textOrientation: 'mixed',

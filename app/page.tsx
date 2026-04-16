@@ -71,10 +71,10 @@ export default function HomePage() {
 
       {/* WORK GRID */}
       <div
-        className="grid gap-[3px]"
-        style={{ gridTemplateColumns: '58fr 42fr', gridTemplateRows: '520px 320px', background: 'var(--ink)' }}
+        className="grid gap-[3px] grid-cols-1 md:grid-cols-[58fr_42fr] md:grid-rows-[520px_320px]"
+        style={{ background: 'var(--ink)' }}
       >
-        <Link href="/work/hcl" className="work-cell" style={{ gridRow: 'span 2', display: 'block', position: 'relative', overflow: 'hidden' }}>
+        <Link href="/work/hcl" className="work-cell md:row-span-2" style={{ display: 'block', position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="https://www.futureadymedia.com/images/case-studies/hcl-thumbnail-new.webp" alt="HCL Technologies" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="work-info">
@@ -158,8 +158,8 @@ export default function HomePage() {
       {/* TESTIMONIAL */}
       <div style={{ background: 'var(--ink)' }}>
         <div
-          className="grid gap-16 items-start"
-          style={{ gridTemplateColumns: '1fr 2fr', padding: '7rem 4vw' }}
+          className="grid gap-8 md:gap-16 items-start grid-cols-1 md:grid-cols-[1fr_2fr]"
+          style={{ padding: '4rem 4vw' }}
         >
           <div>
             <div className="label sr" style={{ color: 'rgba(255,255,255,.3)', marginBottom: '1rem' }}>

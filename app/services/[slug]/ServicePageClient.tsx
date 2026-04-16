@@ -257,7 +257,7 @@ export default function ServicePageClient({ service: s }: { service: ServiceData
         <h1 className="d-xl sr sr-delay-1" style={{ marginTop: '1.5rem' }}>
           {s.title}<br /><em className="c-blue" style={{ fontStyle: 'italic' }}>{s.titleBlue}</em>
         </h1>
-        <div className="grid gap-16 items-end" style={{ gridTemplateColumns: '1fr 1fr', marginTop: '4rem' }}>
+        <div className="grid gap-8 md:gap-16 items-end grid-cols-1 md:grid-cols-2" style={{ marginTop: '2.5rem' }}>
           <div className="t-base sr sr-delay-2" style={{ maxWidth: 440 }}>{s.heroDesc}</div>
           <div className="flex gap-12 flex-wrap sr sr-delay-3">
             {s.stats.map((st) => (
@@ -285,7 +285,7 @@ export default function ServicePageClient({ service: s }: { service: ServiceData
       </div>
 
       {/* INTRO / THE APPROACH */}
-      <div className="grid gap-20 items-start" style={{ gridTemplateColumns: '1fr 1.6fr', padding: '6rem 4vw', borderBottom: '1px solid var(--rule)' }}>
+      <div className="grid gap-8 md:gap-20 items-start grid-cols-1 md:grid-cols-[1fr_1.6fr]" style={{ padding: '4rem 4vw', borderBottom: '1px solid var(--rule)' }}>
         <div>
           <div className="section-label-row sr"><span className="lbl">The Approach</span><span className="line" /></div>
           <h2 className="d-md sr sr-delay-1">{s.approachTitle.split(' ').slice(0, 2).join(' ')}<br />{s.approachTitle.split(' ').slice(2).join(' ')}</h2>
@@ -347,7 +347,7 @@ export default function ServicePageClient({ service: s }: { service: ServiceData
         <h2 className="d-md sr sr-delay-1" style={{ marginBottom: '3.5rem' }}>
           What sets<br /><em className="c-blue" style={{ fontStyle: 'italic' }}>us apart.</em>
         </h2>
-        <div className="grid gap-10 sr sr-delay-2" style={{ gridTemplateColumns: '1fr 1fr' }}>
+        <div className="grid gap-10 sr sr-delay-2 grid-cols-1 md:grid-cols-2">
           {differentiators.map((diff, i) => (
             <div key={i} style={{ padding: '2rem 0', borderTop: '1px solid var(--rule)' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '.8rem', marginBottom: '.8rem' }}>
@@ -386,7 +386,7 @@ export default function ServicePageClient({ service: s }: { service: ServiceData
         <h2 className="d-md sr sr-delay-1" style={{ color: 'var(--white)', marginBottom: '3.5rem' }}>
           Industries<br /><em className="c-blue" style={{ fontStyle: 'italic' }}>we serve.</em>
         </h2>
-        <div className="grid gap-8 sr sr-delay-2" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+        <div className="grid gap-8 sr sr-delay-2 grid-cols-1 md:grid-cols-3">
           {industries.map((ind, i) => (
             <div key={i} style={{ padding: '2rem', border: '1px solid rgba(255,255,255,.08)' }}>
               <h3 style={{ fontSize: '.95rem', fontWeight: 700, color: 'var(--white)', marginBottom: '.6rem' }}>{ind.name}</h3>
@@ -397,7 +397,7 @@ export default function ServicePageClient({ service: s }: { service: ServiceData
       </div>
 
       {/* FAQ */}
-      <div className="grid gap-20" style={{ padding: '7rem 4vw', gridTemplateColumns: '1fr 1.5fr', borderTop: '1px solid var(--rule)' }}>
+      <div className="grid gap-8 md:gap-20 grid-cols-1 md:grid-cols-[1fr_1.5fr]" style={{ padding: '5rem 4vw', borderTop: '1px solid var(--rule)' }}>
         <div>
           <div className="section-label-row sr"><span className="lbl">FAQ</span><span className="line" /></div>
           <h2 className="d-sm sr sr-delay-1">Common<br />questions.</h2>

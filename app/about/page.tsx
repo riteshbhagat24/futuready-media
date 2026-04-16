@@ -88,10 +88,9 @@ export default function AboutPage() {
       {/* ─── STORY + TIMELINE ─── */}
       <section style={{ padding: '7rem 4vw' }}>
         <div
+          className="grid grid-cols-1 md:grid-cols-2"
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '5rem',
+            gap: '3rem',
           }}
         >
           {/* Left — Our Story */}
@@ -177,10 +176,8 @@ export default function AboutPage() {
           Our values.<br />Our promise.
         </h2>
         <div
-          className="values-grid"
+          className="values-grid grid grid-cols-1 md:grid-cols-3"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '1px',
             background: 'rgba(255,255,255,.08)',
           }}
@@ -233,10 +230,8 @@ export default function AboutPage() {
           The people behind<br />the performance.
         </h2>
         <div
-          className="team-grid"
+          className="team-grid grid grid-cols-2 md:grid-cols-4"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
             gap: '2rem',
           }}
         >

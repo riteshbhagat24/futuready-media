@@ -41,6 +41,7 @@ export default function WorkDetailPage({ params }: Props) {
 
   return (
     <>
+      <style dangerouslySetInnerHTML={{ __html: `@media(min-width:768px){.results-hero-grid{grid-template-columns:repeat(${w.results.length},1fr)}}` }} />
       {/* HERO */}
       <div className="relative flex flex-col justify-end overflow-hidden" style={{ minHeight: '80vh', background: '#060e1e', padding: '12rem 4vw 0' }}>
         <div className="absolute inset-0" style={{ backgroundImage: `url(${w.image})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15, filter: 'grayscale(1)' }} />
@@ -52,7 +53,7 @@ export default function WorkDetailPage({ params }: Props) {
           <h1 className="d-xl" style={{ color: 'var(--white)' }}>{w.client}</h1>
           <p className="d-sm" style={{ color: 'var(--blue)', fontStyle: 'italic', marginTop: '0.5rem' }}>{w.tagline}</p>
         </div>
-        <div className="grid" style={{ gridTemplateColumns: `repeat(${w.results.length}, 1fr)`, background: 'rgba(255,255,255,.06)', marginTop: '4rem' }}>
+        <div className="results-hero-grid grid grid-cols-2" style={{ background: 'rgba(255,255,255,.06)', marginTop: '4rem' }}>
           {w.results.map((r, i) => (
             <div key={i} style={{ padding: '2.5rem 2rem', borderRight: i < w.results.length - 1 ? '1px solid rgba(255,255,255,.1)' : 'none' }}>
               <div style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)', fontWeight: 900, color: 'var(--white)', lineHeight: 1 }}>{r.val}</div>
@@ -63,7 +64,7 @@ export default function WorkDetailPage({ params }: Props) {
       </div>
 
       {/* OVERVIEW */}
-      <div className="grid gap-20 items-start" style={{ gridTemplateColumns: '280px 1fr', padding: '5rem 4vw', borderBottom: '1px solid var(--rule)' }}>
+      <div className="grid gap-8 md:gap-20 items-start grid-cols-1 md:grid-cols-[280px_1fr]" style={{ padding: '5rem 4vw', borderBottom: '1px solid var(--rule)' }}>
         <div className="sr">
           {[
             { lbl: 'Client', val: w.client },
@@ -90,7 +91,7 @@ export default function WorkDetailPage({ params }: Props) {
       </div>
 
       {/* CHALLENGE */}
-      <div className="grid gap-20" style={{ gridTemplateColumns: '1fr 1fr', padding: '6rem 4vw', borderBottom: '1px solid var(--rule)' }}>
+      <div className="grid gap-8 md:gap-20 grid-cols-1 md:grid-cols-2" style={{ padding: '4rem 4vw', borderBottom: '1px solid var(--rule)' }}>
         <div>
           <div className="section-label-row sr"><span className="lbl">The Challenge</span><span className="line" /></div>
           <h2 className="d-md sr sr-delay-1">What we were<br />up against.</h2>
@@ -161,7 +162,7 @@ export default function WorkDetailPage({ params }: Props) {
       <div style={{ padding: '6rem 4vw', borderTop: '1px solid var(--rule)' }}>
         <div className="section-label-row sr"><span className="lbl">Why Futuready Media</span><span className="line" /></div>
         <h2 className="d-md sr sr-delay-1" style={{ marginBottom: '2rem' }}>Why {w.client} chose<br />Futuready Media.</h2>
-        <div className="grid gap-8 sr sr-delay-2" style={{ gridTemplateColumns: '1fr 1fr', marginTop: '2rem' }}>
+        <div className="grid gap-8 sr sr-delay-2 grid-cols-1 md:grid-cols-2" style={{ marginTop: '2rem' }}>
           <div>
             <p className="t-base" style={{ marginBottom: '1.5rem' }}>
               With 13+ years of experience and 500+ client engagements, Futuready Media brings deep expertise in {w.category.toLowerCase()} marketing. Our approach is built on three principles: strategy before execution, data over assumptions, and accountability over visibility.
@@ -188,7 +189,7 @@ export default function WorkDetailPage({ params }: Props) {
       </div>
 
       {/* FAQ */}
-      <div className="grid gap-20" style={{ padding: '7rem 4vw', gridTemplateColumns: '1fr 1.5fr', borderTop: '1px solid var(--rule)' }}>
+      <div className="grid gap-8 md:gap-20 grid-cols-1 md:grid-cols-[1fr_1.5fr]" style={{ padding: '5rem 4vw', borderTop: '1px solid var(--rule)' }}>
         <div>
           <div className="section-label-row sr"><span className="lbl">FAQ</span><span className="line" /></div>
           <h2 className="d-sm sr sr-delay-1">Frequently<br />asked.</h2>
@@ -200,7 +201,7 @@ export default function WorkDetailPage({ params }: Props) {
       {related.length > 0 && (
         <div style={{ padding: '5rem 4vw', borderTop: '1px solid var(--rule)' }}>
           <div className="section-label-row sr"><span className="lbl">More {w.category} Work</span><span className="line" /></div>
-          <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(related.length, 3)}, 1fr)`, gap: '3px', marginTop: '2rem' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[3px]" style={{ marginTop: '2rem' }}>
             {related.map((r) => (
               <Link key={r.slug} href={`/work/${r.slug}`} style={{ display: 'block' }}>
                 <div className="work-cell" style={{ height: '280px', position: 'relative', overflow: 'hidden' }}>

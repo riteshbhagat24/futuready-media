@@ -1,0 +1,152 @@
+backend:
+  name: github
+  repo: riteshbhagat24/futuready-media
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: work
+    label: Work / Portfolio
+    folder: content/work
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Client Name, name: client, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Tagline, name: tagline, widget: string }
+      - { label: Category, name: category, widget: select, options: [Stockbroking, Private Equity, Entertainment, Power Utility, Pharma, BFSI, Logistics, Philanthropy, Consumer Durables, Conglomerate, Insurance, Beauty, Novelty, Payments, QSR, Manufacturing, Oil & Gas, Agribusiness, Interior Design] }
+      - { label: Thumbnail Image, name: image, widget: image }
+      - { label: Description, name: description, widget: text }
+      - label: Services
+        name: services
+        widget: list
+        field: { label: Service, name: service, widget: string }
+      - label: Results
+        name: results
+        widget: list
+        fields:
+          - { label: Value, name: val, widget: string }
+          - { label: Label, name: key, widget: string }
+
+  - name: blog
+    label: Blog / Ideas
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Date, name: date, widget: datetime, format: "MMM DD, YYYY" }
+      - { label: Category, name: category, widget: select, options: [Web Design, Web Development, Website Development, Digital Marketing, Branding, SEO, Content, Lead Generation, Digital Strategy] }
+      - { label: Featured Image, name: image, widget: image }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: case-studies
+    label: Case Studies
+    folder: content/case-studies
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Client Name, name: client, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Industry, name: industry, widget: string }
+      - { label: Description, name: description, widget: text }
+      - label: Metrics
+        name: metrics
+        widget: list
+        fields:
+          - { label: Value, name: val, widget: string }
+          - { label: Unit, name: unit, widget: string }
+          - { label: Label, name: key, widget: string }
+      - label: Process Steps
+        name: steps
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: desc, widget: text }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: careers
+    label: Careers
+    folder: content/careers
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Job Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Department, name: department, widget: select, options: [Engineering, Design, Marketing, Content, Business Development, SEO] }
+      - { label: Type, name: type, widget: select, options: [Full-time, Internship, Contract] }
+      - { label: Location, name: location, widget: string, default: Mumbai }
+      - { label: Description, name: description, widget: text }
+      - label: Requirements
+        name: requirements
+        widget: list
+        field: { label: Requirement, name: req, widget: string }
+
+  - name: services
+    label: Services
+    folder: content/services
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Title Blue Part, name: titleBlue, widget: string }
+      - { label: Meta Title, name: metaTitle, widget: string }
+      - { label: Meta Description, name: metaDesc, widget: text }
+      - { label: Hero Description, name: heroDesc, widget: text }
+      - label: Stats
+        name: stats
+        widget: list
+        fields:
+          - { label: Value, name: val, widget: string }
+          - { label: Label, name: key, widget: string }
+      - label: Badges/Tags
+        name: badges
+        widget: list
+        field: { label: Badge, name: badge, widget: string }
+      - { label: Approach Title, name: approachTitle, widget: string }
+      - label: Approach Description
+        name: approachDesc
+        widget: list
+        field: { label: Paragraph, name: para, widget: text }
+      - { label: Industries, name: industries, widget: string }
+      - { label: Engagement Model, name: engagement, widget: string }
+      - label: Process Steps
+        name: steps
+        widget: list
+        fields:
+          - { label: Step Number, name: num, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: desc, widget: text }
+
+  - name: pages
+    label: Pages
+    files:
+      - label: Home Page
+        name: home
+        file: content/pages/home.json
+        fields:
+          - { label: Hero Badge Text, name: heroBadge, widget: string }
+          - { label: Hero Description, name: heroDesc, widget: text }
+          - { label: Testimonial Quote, name: testimonialQuote, widget: text }
+          - { label: Testimonial Name, name: testimonialName, widget: string }
+          - { label: Testimonial Role, name: testimonialRole, widget: string }
+      - label: About Page
+        name: about
+        file: content/pages/about.json
+        fields:
+          - { label: Hero Description, name: heroDesc, widget: text }
+          - { label: Story Paragraph 1, name: story1, widget: text }
+          - { label: Story Paragraph 2, name: story2, widget: text }
+      - label: Contact Page
+        name: contact
+        file: content/pages/contact.json
+        fields:
+          - { label: Hero Description, name: heroDesc, widget: text }
+          - { label: Email, name: email, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Office Address, name: address, widget: text }

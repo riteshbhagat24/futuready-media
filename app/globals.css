@@ -405,18 +405,66 @@
 }
 
 /* ─── RESPONSIVE ─── */
+
+/* Tablet */
 @media(max-width:1024px) {
   .stats-row { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
+  .process-step { grid-template-columns: 3rem 1fr; gap: 1.5rem; }
+  .d-hero { font-size: clamp(2.5rem,8vw,6rem); }
+  .d-xl { font-size: clamp(2.2rem,7vw,5rem); }
+  .d-lg { font-size: clamp(2rem,5vw,4rem); }
+  .d-md { font-size: clamp(1.5rem,3vw,2.5rem); }
 }
+
+/* Mobile */
 @media(max-width:768px) {
-  .nav-links { display: none; }
   .stats-row { grid-template-columns: 1fr 1fr; }
-  .footer-top { grid-template-columns: 1fr; }
-  .cta-strip { flex-direction: column; align-items: flex-start; }
+  .stat-item { padding: 2rem 1.5rem; }
+  .stat-num { font-size: clamp(2rem,8vw,3rem); }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .cta-strip {
+    flex-direction: column; align-items: flex-start;
+    padding: 4rem 5vw;
+  }
+  .cta-strip .headline { font-size: clamp(1.8rem,6vw,3rem); }
   .result-grid { grid-template-columns: 1fr 1fr; }
+  .result-cell { padding: 2rem 1.5rem; }
+  .result-val { font-size: clamp(1.8rem,6vw,3rem); }
+  .services-list .svc-item {
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: 1rem; padding: 1.2rem 0;
+  }
+  .svc-name { font-size: 1rem; }
+  .svc-arrow { width: 36px; height: 36px; }
+  .process-step { grid-template-columns: 1fr; gap: 1rem; }
+  .step-num { font-size: 10px; }
+  .section-label-row { margin-bottom: 1.5rem; }
+  .marquee-item { font-size: 10px; gap: 2rem; padding: .8rem 0; }
+  .marquee-big .marquee-item { font-size: clamp(1.8rem,5vw,3rem); }
+  .faq-q { font-size: .9rem; padding: 1.2rem 0; }
+
+  /* Typography mobile */
+  .d-hero { font-size: clamp(2.2rem,10vw,4rem); }
+  .d-xl { font-size: clamp(2rem,9vw,3.5rem); }
+  .d-lg { font-size: clamp(1.8rem,7vw,3rem); }
+  .d-md { font-size: clamp(1.4rem,5vw,2rem); }
+  .d-sm { font-size: clamp(1.1rem,3vw,1.5rem); }
+  .t-base { font-size: .9rem; }
+
+  /* Work cells */
+  .work-cell img { width: 100%; height: 100%; object-fit: cover; }
+  .work-info { padding: 1.5rem; opacity: 1; }
+  .work-info .client { font-size: 9px; }
+  .work-info .title { font-size: .85rem; }
 }
+
+/* Small mobile */
 @media(max-width:480px) {
   .stats-row { grid-template-columns: 1fr; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--rule); }
+  .stat-item:last-child { border-bottom: none; }
   .result-grid { grid-template-columns: 1fr; }
+  .result-cell { border-right: none !important; }
 }

@@ -33,7 +33,7 @@ const values = [
 ];
 
 const team = [
-  { initials: 'RB', name: 'Ritesh Bhagat', role: 'Digital Operations Head' },
+  { initials: 'RB', name: 'Karen Sequeira', role: 'Creative Head' },
   { initials: 'SA', name: 'Karthik PS', role: 'Brand & Growth Strategy' },
   { initials: 'PM', name: 'Parth Mehta', role: 'Business Lead' },
   { initials: 'SE', name: 'Zeeshan Thakur', role: 'Client Success Lead' },

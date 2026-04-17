@@ -9,6 +9,7 @@ export default defineConfig({
   title: 'Futuready Media CMS',
   projectId,
   dataset,
+  basePath: '/studio',
   plugins: [
     deskTool(),
     visionTool({ defaultApiVersion: apiVersion }),

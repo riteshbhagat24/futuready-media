@@ -5,8 +5,18 @@ export const metadata = {
 
 export default function StudioLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body style={{ margin: 0, padding: 0 }}>{children}</body>
-    </html>
+    <div
+      id="sanity-studio"
+      style={{ height: '100vh', width: '100vw', position: 'fixed', top: 0, left: 0, zIndex: 9999 }}
+    >
+      <style dangerouslySetInnerHTML={{ __html: `
+        #sanity-studio ~ footer,
+        body > nav,
+        #cur, #cur-ring,
+        .preloader { display: none !important; }
+        body { overflow: hidden !important; background: #101112 !important; }
+      `}} />
+      {children}
+    </div>
   );
 }
